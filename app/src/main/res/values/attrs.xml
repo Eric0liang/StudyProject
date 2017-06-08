@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义进度条-->
+    <declare-styleable name="CustomProgress">
+        <attr name="radius" format="dimension" /><!--半径-->
+        <attr name="strokeWidth" format="dimension" /><!--进度条宽度-->
+        <attr name="circleWidth" format="dimension" /><!--外圈宽度-->
+        <attr name="circleColor" format="color" /><!--内圆颜色-->
+        <attr name="ringColor" format="color" /><!--进度条颜色-->
+        <attr name="totalProgress" format="integer" /><!--总进度-->
+        <attr name="bigCircleColor" format="color" /><!--外圆颜色-->
+    </declare-styleable>
+</resources>

@@ -8,4 +8,8 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="appointment_margin">47dp</dimen>
     <dimen name="appointment_margin2">65dp</dimen>
+
+    <dimen name="customProgress_radius">19dp</dimen>
+    <dimen name="customProgress_stroke_width">5dp</dimen>
+    <dimen name="customProgress_circle_width">36dp</dimen>
 </resources>

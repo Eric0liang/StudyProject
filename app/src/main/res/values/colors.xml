@@ -10,4 +10,7 @@
     <color name="text_red">#ff6c47</color>
     <color name="txt_a6a9b4">#a6a9b4</color>
     <color name="txt_0058f1">#0058f1</color>
+
+    <color name="panel_black">#25272A</color>
+    <color name="text_blue1">#1173CB</color>
 </resources>
