@@ -23,13 +23,17 @@ import com.study.eric.video.VideoCaptureActivity;
 import com.study.eric.widget.EmojiFlowLayout;
 
 import butterknife.Bind;
+import cn.com.bluemoon.cardocr.lib.CaptureActivity;
+import cn.com.bluemoon.cardocr.lib.bean.BankInfo;
+import cn.com.bluemoon.cardocr.lib.bean.IdCardInfo;
+import cn.com.bluemoon.cardocr.lib.common.CardType;
 
 public class MainActivity extends BaseFragmentActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     @Bind(R.id.emojiFlowLayout)
     EmojiFlowLayout emojiFlowLayout;
 
-    private String[] item = new String[]{"Kotlin", "Tab", "Dagger2","design", "jni", "video"};
+    private String[] item = new String[]{"Kotlin", "Tab", "Dagger2","design", "jni", "video", "card"};
 
     @Override
     protected int getLayoutId() {
@@ -106,9 +110,20 @@ public class MainActivity extends BaseFragmentActivity
                 intent = new Intent(this, VideoCaptureActivity.class);
                 startActivity(intent);
                 break;
+            case 6:
+                CaptureActivity.startAction(this, CardType.TYPE_ID_CARD_FRONT, 0);
+                break;
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 0 && resultCode == RESULT_OK) {
+            IdCardInfo info = (IdCardInfo)data.getSerializableExtra(CaptureActivity.BUNDLE_DATA);
+            toast(info.toString());
+        }
+    }
 
     @Override
     public void onBackPressed() {

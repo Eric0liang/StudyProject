@@ -1,8 +1,15 @@
-#include "JniTest.h"
+#include "com_study_eric_jni_JniTest.h"
 
 JNIEXPORT jstring JNICALL Java_com_study_eric_jni_JniTest_getJniString
         (JNIEnv *env, jobject object) {
     return (*env)->NewStringUTF(env, "Hello from JNI !");
+}
+
+void log_verbose(const char* format,...) {
+    va_list args;
+    va_start(args, format);
+    __android_log_vprint(ANDROID_LOG_VERBOSE, "hello-jni", format, args);
+    va_end(args);
 }
 
 JNIEXPORT jstring JNICALL Java_com_study_eric_jni_JniTest_getStringFromJavaField

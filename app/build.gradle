@@ -35,6 +35,9 @@ dependencies {
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+    //compile 'com.bluemoon.cardocr:lib_cardocr:1.0.1'
+    //compile 'cn.com.bluemoon:lib_cardocr:1.0.1'
+    compile 'com.github.eric0liang:lib_cardocr:1.0.0'
 }
 repositories {
     mavenCentral()

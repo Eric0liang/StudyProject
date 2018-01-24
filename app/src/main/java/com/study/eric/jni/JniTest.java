@@ -1,5 +1,7 @@
 package com.study.eric.jni;
 
+import java.io.IOException;
+
 /**
  * JNI hello world!
  * Created by liangjiangli on 2017/5/25.
@@ -9,6 +11,7 @@ public class JniTest {
     static {
         System.loadLibrary("app"); //jni模块加载名称
     }
+
     public native String getJniString(); //该方法是红色的，暂时不用理会
 
     public native String getStringFromJavaField(JavaClass j); //JNI调用java属性

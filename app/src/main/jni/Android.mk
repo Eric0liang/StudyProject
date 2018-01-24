@@ -1,17 +1,18 @@
 LOCAL_PATH := $(call my-dir)
+
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := app
-LOCAL_LDFLAGS := -Wl,--build-id
-LOCAL_SRC_FILES := \
-	/Users/daredos/Android/Study/app/src/main/jni/com_study_eric_JniTest.c \
 
-LOCAL_C_INCLUDES += /Users/daredos/Android/Study/app/src/main/jni
-LOCAL_C_INCLUDES += /Users/daredos/Android/Study/app/src/debug/jni
+# Use WAVLib static library
+#LOCAL_STATIC_LIBRARIES += wavlib_static
 
-SWIG_PACKAGE := com.study.eric.swig
-SWIG_INTERFACES := Unix.i
-SWIG_TYPE := c
-include $(LOCAL_PATH)/swig-generate.mk
+# Link with OpenSL ES
+LOCAL_LDLIBS += -lOpenSLES
 
 include $(BUILD_SHARED_LIBRARY)
+
+# Import WAVLib library module
+#$(call import-add-path,$(LOCAL_PATH))
+
+LOCAL_SRC_FILES := com_study_eric_jni_JniTest.c
